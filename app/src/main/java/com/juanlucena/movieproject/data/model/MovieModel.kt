@@ -1,6 +1,8 @@
 package com.juanlucena.movieproject.data.model
 
 import com.google.gson.annotations.SerializedName
+import com.juanlucena.movieproject.data.database.entity.MovieEntity
+import com.juanlucena.movieproject.domain.model.Movie
 
 data class MovieModel (
 
@@ -22,3 +24,47 @@ data class MovieModel (
     @SerializedName("vehicles") val vehicles : List<String>,
     @SerializedName("url") val url : String
 )
+
+fun Movie.toModel(): MovieModel {
+    return MovieModel(
+        id = id,
+        title = title,
+        originalTitle = originalTitle,
+        originalTitleRomanised = originalTitleRomanised,
+        image = image,
+        movieBanner = movieBanner,
+        description = description,
+        director = director,
+        producer = producer,
+        releaseDate = releaseDate,
+        runningTime = runningTime,
+        rtScore = rtScore,
+        people = people,
+        species = species,
+        locations = locations,
+        vehicles = vehicles,
+        url = url,
+    )
+}
+
+fun MovieEntity.toModel(): MovieModel {
+    return MovieModel(
+        id = id,
+        title = title,
+        originalTitle = originalTitle,
+        originalTitleRomanised = originalTitleRomanised,
+        image = image,
+        movieBanner = movieBanner,
+        description = description,
+        director = director,
+        producer = producer,
+        releaseDate = releaseDate,
+        runningTime = runningTime,
+        rtScore = rtScore,
+        people = people,
+        species = species,
+        locations = locations,
+        vehicles = vehicles,
+        url = url,
+    )
+}
