@@ -1,11 +1,11 @@
 package com.juanlucena.movieproject.data.network
 
 import com.juanlucena.movieproject.data.model.MovieModel
-import com.juanlucena.movieproject.data.network.MovieApiClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MovieService(private val apiClient: MovieApiClient) {
+class MovieService @Inject constructor(private val apiClient: MovieApiClient) {
 
     suspend fun getAllMovies(): List<MovieModel>{
         return withContext(Dispatchers.IO){
