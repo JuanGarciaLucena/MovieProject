@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MovieProject</string>
+
+    <!-- Movie list strings -->
+    <string name="movieTitleYear">%1$s (%2$s)</string>
+    <string name="movieRunningTime">%1$s min</string>
+
+    <!-- ImageView content description -->
+    <string name="moviePictureContentDescription">Movie picture</string>
 </resources>
