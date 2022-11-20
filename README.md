@@ -1,7 +1,6 @@
 # MovieProject
 Movie App
 
-Movie App
 
 1 - ¿Qué es el DataBinding? Es una librería que nos permite enlazar los componentes de la interfaz de usuario con los layouts y de donde provienen los datos. De esta forma podemos mostrar la información en los layouts de forma declarativa
 
