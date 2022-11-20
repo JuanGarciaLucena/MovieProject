@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: MovieAdapter
     private val movieMutableList = mutableListOf<Movie>()
-
     private val viewModel: MovieViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initAdapter()
+        initLiveDataObservers()
     }
 
     override fun onResume() {
@@ -36,12 +36,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initData(){
         viewModel.getAllMovies()
-
-        viewModel.movies.observe(this) { movies ->
-            movieMutableList.clear()
-            movieMutableList.addAll(movies)
-            adapter.notifyDataSetChanged()
-        }
     }
 
     private fun initAdapter(){
@@ -54,6 +48,14 @@ class MainActivity : AppCompatActivity() {
             onItemClick = {movie -> onItemClick(movie)},
             onItemDelete = {position -> onItemDelete(position)})
         binding.moviesRecyclerView.adapter = adapter
+    }
+
+    private fun initLiveDataObservers(){
+        viewModel.movies.observe(this) { movies ->
+            movieMutableList.clear()
+            movieMutableList.addAll(movies)
+            adapter.notifyDataSetChanged()
+        }
     }
 
     private fun onItemClick(movie: Movie){
