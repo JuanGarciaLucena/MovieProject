@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 import com.juanlucena.movieproject.data.database.entity.MovieEntity
 
 @Dao
@@ -19,6 +20,6 @@ interface MovieDao {
     @Delete
     suspend fun deleteMovieFromDatabase(movie: MovieEntity)
 
-    @Query("UPDATE movie_table SET title = :title, description = :description WHERE id = :movieId")
-    suspend fun editMovie(movieId: String, title: String, description: String)
+    @Update
+    suspend fun editMovie(movie: MovieEntity)
 }

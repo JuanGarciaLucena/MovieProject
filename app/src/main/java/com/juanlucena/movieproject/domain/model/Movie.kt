@@ -5,23 +5,23 @@ import com.juanlucena.movieproject.data.model.MovieModel
 
 data class Movie(
 
-    val id: String,
-    val title: String,
-    val originalTitle: String,
-    val originalTitleRomanised: String,
-    val image: String,
-    val movieBanner: String,
-    val description: String,
-    val director: String,
-    val producer: String,
-    val releaseDate: Int,
-    val runningTime: Int,
-    val rtScore: Int,
-    val people: List<String>,
-    val species: List<String>,
-    val locations: List<String>,
-    val vehicles: List<String>,
-    val url: String
+    var id: String,
+    var title: String,
+    var originalTitle: String,
+    var originalTitleRomanised: String,
+    var image: String,
+    var movieBanner: String,
+    var description: String,
+    var director: String,
+    var producer: String,
+    var releaseDate: Int,
+    var runningTime: Int,
+    var rtScore: Int,
+    var people: List<String>,
+    var species: List<String>,
+    var locations: List<String>,
+    var vehicles: List<String>,
+    var url: String
 ) : java.io.Serializable
 
 fun MovieEntity.toDomain(): Movie {

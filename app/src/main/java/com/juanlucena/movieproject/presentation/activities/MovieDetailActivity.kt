@@ -37,7 +37,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
         binding.editButton.setOnClickListener {
             val dialog =  EditMovieInfoFragment(onFinishEditing = {title, description -> onFinishEditing(title, description)})
-            dialog.show(supportFragmentManager, "pepe")
+            dialog.show(supportFragmentManager, "edit_fragment")
         }
     }
 
