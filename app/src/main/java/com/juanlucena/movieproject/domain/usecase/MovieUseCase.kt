@@ -20,4 +20,8 @@ class MovieUseCase @Inject constructor(private val repository: MovieRepository) 
             movieListFromDb.map { movieEntity -> movieEntity.toDomain() }
         }
     }
+
+    suspend fun deleteMovieFromDatabase(movie: Movie){
+        repository.deleteMovieFromDatabase(movie.toEntity())
+    }
 }

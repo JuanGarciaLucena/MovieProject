@@ -5,6 +5,11 @@
     <string name="movieTitleYear">%1$s (%2$s)</string>
     <string name="movieRunningTime">%1$s min</string>
 
+    <!-- Movie detail strings -->
+    <string name="movieOriginalTitle">Original title: %1$s</string>
+    <string name="movieYearRunningTime">%1$s - %2$s min - Score: %3$s</string>
+
     <!-- ImageView content description -->
     <string name="moviePictureContentDescription">Movie picture</string>
+    <string name="movieDeleteContentDescription">Delete movie</string>
 </resources>

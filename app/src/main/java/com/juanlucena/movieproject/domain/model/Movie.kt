@@ -22,7 +22,7 @@ data class Movie(
     val locations: List<String>,
     val vehicles: List<String>,
     val url: String
-)
+) : java.io.Serializable
 
 fun MovieEntity.toDomain(): Movie {
     return Movie(

@@ -9,15 +9,10 @@ import com.bumptech.glide.Glide
 import com.juanlucena.movieproject.databinding.AdapterMovieBinding
 import com.juanlucena.movieproject.domain.model.Movie
 
-class MovieAdapter(private val movieList: List<Movie>) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
-
-    companion object {
-        @JvmStatic
-        @BindingAdapter("loadImage")
-        fun loadImage(imageView: ImageView, url: String){
-            Glide.with(imageView).load(url).into(imageView)
-        }
-    }
+class MovieAdapter(
+    private val movieList: List<Movie>,
+    private val onItemClick: (Movie) -> Unit,
+    private val onItemDelete: (Int) -> Unit) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     override fun getItemCount() = movieList.size
 
@@ -34,6 +29,8 @@ class MovieAdapter(private val movieList: List<Movie>) : RecyclerView.Adapter<Mo
 
         fun bind(movie: Movie){
             binding.movie = movie
+            binding.movieItemContainer.setOnClickListener { onItemClick(movie) }
+            binding.deleteMovieButton.setOnClickListener { onItemDelete(adapterPosition) }
         }
     }
 }

@@ -23,4 +23,10 @@ class MovieViewModel @Inject constructor(private val useCase: MovieUseCase): Vie
             _movies.postValue(useCase.getAllMovies())
         }
     }
+
+    fun deleteMovieFromDatabase(movie: Movie){
+        viewModelScope.launch {
+            useCase.deleteMovieFromDatabase(movie)
+        }
+    }
 }
