@@ -73,12 +73,23 @@
                 android:id="@+id/movieDescriptionTv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{@string/movieOriginalTitle(movie.description)}"
+                android:text="@{movie.description}"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/movieBannerIv"/>
+
+            <Button
+                android:id="@+id/editButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:text="@string/editButtonLabel"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/movieDescriptionTv"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

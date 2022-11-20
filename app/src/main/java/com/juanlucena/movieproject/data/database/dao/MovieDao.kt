@@ -18,4 +18,7 @@ interface MovieDao {
 
     @Delete
     suspend fun deleteMovieFromDatabase(movie: MovieEntity)
+
+    @Query("UPDATE movie_table SET title = :title, description = :description WHERE id = :movieId")
+    suspend fun editMovie(movieId: String, title: String, description: String)
 }

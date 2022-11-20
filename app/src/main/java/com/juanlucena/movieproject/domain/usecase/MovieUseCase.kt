@@ -24,4 +24,15 @@ class MovieUseCase @Inject constructor(private val repository: MovieRepository) 
     suspend fun deleteMovieFromDatabase(movie: Movie){
         repository.deleteMovieFromDatabase(movie.toEntity())
     }
+
+    suspend fun editMovieFromDatabase(movie: Movie, title: String, description: String){
+
+        if(title.isNotEmpty() || description.isNotEmpty()){
+            val editedDescription = description.ifEmpty { movie.description }
+            val editedTitle = title.ifEmpty { movie.title }
+            repository.editMovieFromDatabase(movie.toEntity(), editedTitle, editedDescription)
+        }
+
+
+    }
 }

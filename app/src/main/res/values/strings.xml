@@ -8,8 +8,14 @@
     <!-- Movie detail strings -->
     <string name="movieOriginalTitle">Original title: %1$s</string>
     <string name="movieYearRunningTime">%1$s - %2$s min - Score: %3$s</string>
+    <string name="editButtonLabel">Edit</string>
+    <string name="editTitleLabel">Movie title</string>
+    <string name="editDescriptionLabel">Description</string>
+    <string name="editInfoLabel">Edit movie information</string>
 
     <!-- ImageView content description -->
     <string name="moviePictureContentDescription">Movie picture</string>
     <string name="movieDeleteContentDescription">Delete movie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

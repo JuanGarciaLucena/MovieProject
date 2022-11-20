@@ -26,4 +26,8 @@ class MovieRepository @Inject constructor(
     suspend fun deleteMovieFromDatabase(movie: MovieEntity){
         movieDao.deleteMovieFromDatabase(movie)
     }
+
+    suspend fun editMovieFromDatabase(movie: MovieEntity, title: String, description: String){
+        movieDao.editMovie(movie.id, title, description)
+    }
 }

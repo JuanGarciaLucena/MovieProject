@@ -29,4 +29,10 @@ class MovieViewModel @Inject constructor(private val useCase: MovieUseCase): Vie
             useCase.deleteMovieFromDatabase(movie)
         }
     }
+
+    fun editMovieFromDatabase(movie: Movie, title: String, description: String){
+        viewModelScope.launch {
+            useCase.editMovieFromDatabase(movie, title, description)
+        }
+    }
 }
